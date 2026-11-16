@@ -1,0 +1,15 @@
+node_modules
+.next
+.env
+*.db
+*.db-journal
+storage/uploads
+storage/imports
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.env*
+.vercel
+.DS_Store
+.claude
+!.env.example

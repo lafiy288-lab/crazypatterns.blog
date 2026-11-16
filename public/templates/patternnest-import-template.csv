@@ -1,0 +1,2 @@
+sku,title,description,category,subcategory,designer,price,old_price,currency,is_free,difficulty,language,file_format,has_video,image_urls,get_pattern_url,is_bestseller,is_new,is_sponsored,status,rating,review_count
+PN-EX-001,Example Crochet Bunny,Step-by-step pattern with photos. Separate paragraphs with a blank line.,Crochet,Amigurumi,Your Designer Name,5.95,7.95,USD,no,beginner,English|German,PDF,yes,https://example.com/images/bunny-1.jpg|https://example.com/images/bunny-2.jpg,https://example.com/shop/bunny,no,yes,no,published,4.8,12

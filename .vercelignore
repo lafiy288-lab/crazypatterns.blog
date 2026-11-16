@@ -1,0 +1,11 @@
+node_modules
+.next
+.env
+.env.local
+*.db
+*.db-journal
+storage/uploads
+storage/imports
+*.tsbuildinfo
+.DS_Store
+.claude

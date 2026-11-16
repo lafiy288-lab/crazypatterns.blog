@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 15 118 110;
+    --color-primary-dark: 17 94 89;
+    --color-accent: 249 115 22;
+    --color-accent-strong: 174 80 15;
+    --color-accent-ink: 174 80 15;
+    --color-bg: 255 251 245;
+    --color-text: 30 41 59;
+    --color-card: 255 255 255;
+    --color-line: 236 229 218;
+    --color-muted: 100 116 139;
+    color-scheme: light;
+  }
+  html.dark {
+    --color-bg: 15 23 32;
+    --color-text: 226 232 240;
+    --color-card: 24 33 45;
+    --color-line: 45 58 74;
+    --color-muted: 148 163 184;
+    --color-primary: 45 178 165;
+    --color-accent-ink: 251 146 60;
+    color-scheme: dark;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-cream;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-card shadow-soft;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-accent {
+    @apply btn bg-accent-strong text-white hover:brightness-110;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-card text-ink hover:border-primary hover:text-primary;
+  }
+  .btn-ghost {
+    @apply btn text-ink hover:bg-primary/10;
+  }
+  .input {
+    @apply w-full rounded-xl border border-line bg-card px-3.5 py-2.5 text-sm text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+  /* Scroll-reveal without JavaScript (progressive enhancement; browsers without
+     scroll-driven animations simply show the content). */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-line/70;
+  }
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent;
+  }
+}

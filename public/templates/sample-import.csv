@@ -1,0 +1,61 @@
+sku,title,description,category,subcategory,designer,price,old_price,currency,is_free,difficulty,language,file_format,has_video,image_urls,get_pattern_url,is_bestseller,is_new,is_sponsored,status,rating,review_count
+IMP-001,Cuddly Panda Amigurumi,"Cuddly Panda Amigurumi is a beginner crochet pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crochet,Amigurumi,Mira Holloway,5.95,7.95,USD,no,beginner,English|German,PDF,yes,/placeholders/crochet-1.webp|/placeholders/crochet-2.webp,,yes,yes,no,published,4.4,10
+IMP-002,Rainbow Ripple Blanket,"Rainbow Ripple Blanket is a intermediate crochet pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crochet,Blankets,Priya Raman,8.50,,USD,no,intermediate,English,PDF,no,/placeholders/crochet-3.webp,,yes,no,no,published,4.5,17
+IMP-003,Crochet Peony Bouquet,"Crochet Peony Bouquet is a intermediate crochet pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crochet,Flowers,Hana Kowalska,0.00,,USD,yes,intermediate,English|French,PDF,yes,/placeholders/crochet-4.webp,,no,yes,no,published,4.6,24
+IMP-004,Nordic Yoke Pullover,"Nordic Yoke Pullover is a advanced knitting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Knitting,Sweaters,Jonas Feldmann,9.95,12.95,USD,no,advanced,English|Dutch,PDF,yes,/placeholders/knitting-1.webp|/placeholders/knitting-2.webp,,yes,no,yes,published,4.7,31
+IMP-005,Garden Path Lace Socks,"Garden Path Lace Socks is a intermediate knitting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Knitting,Socks,Clara Bennett,6.45,,USD,no,intermediate,English,PDF,no,/placeholders/knitting-3.webp,,no,yes,no,published,4.8,38
+IMP-006,Snuggle Baby Blanket,"Snuggle Baby Blanket is a beginner knitting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Knitting,Baby,Nora Albrecht,0.00,,USD,yes,beginner,English|German,PDF,yes,/placeholders/knitting-4.webp,,no,no,no,published,4.9,45
+IMP-007,Weekender Duffle Bag,"Weekender Duffle Bag is a advanced sewing pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Sewing,Bags,Felix Ward,11.00,14.00,USD,no,advanced,English,PDF,yes,/placeholders/sewing-1.webp|/placeholders/sewing-2.webp,,yes,no,no,published,4.3,52
+IMP-008,Kids' Hooded Poncho,"Kids' Hooded Poncho is a beginner sewing pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Sewing,Kids,Lena Vossberg,6.95,,USD,no,beginner,English|Spanish,PDF,no,/placeholders/sewing-3.webp,,no,yes,no,published,4.4,59
+IMP-009,Patchwork Table Runner,"Patchwork Table Runner is a beginner sewing pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Sewing,Home,Theo Marchetti,4.95,,USD,no,beginner,English,PDF,no,/placeholders/sewing-4.webp,,no,no,yes,published,4.5,66
+IMP-010,Paper Butterfly Wall Art,"Paper Butterfly Wall Art is a beginner crafts pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crafts,Paper,Elise Durand,3.95,,USD,no,beginner,English|French,PDF,no,/placeholders/crafts-1.webp,,no,yes,no,published,4.6,73
+IMP-011,Boho Macramé Mirror,"Boho Macramé Mirror is a intermediate crafts pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crafts,Macramé,Elise Durand,7.45,9.95,USD,no,intermediate,English,PDF,yes,/placeholders/crafts-2.webp|/placeholders/crafts-3.webp,,yes,no,no,published,4.7,80
+IMP-012,Needle-Felted Owl Family,"Needle-Felted Owl Family is a intermediate felting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Felting,Animals,Oskar Lindqvist,6.95,,USD,no,intermediate,English|German,PDF,yes,/placeholders/felting-1.webp,,no,yes,no,published,4.8,87
+IMP-013,Wet-Felted Seat Cushion,"Wet-Felted Seat Cushion is a advanced felting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Felting,Wet felting,Sami Virtanen,8.95,,USD,no,advanced,English,PDF,no,/placeholders/felting-2.webp,,no,no,no,published,4.9,94
+IMP-014,Felted Acorn Garland,"Felted Acorn Garland is a beginner felting pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Felting,Decor,Oskar Lindqvist,0.00,,USD,yes,beginner,English,PDF,no,/placeholders/felting-3.webp,,no,yes,no,published,4.3,101
+IMP-015,Fern & Moss Hoop,"Fern & Moss Hoop is a beginner embroidery pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Embroidery,Botanical,Aiko Tanabe,5.45,,USD,no,beginner,English|Italian,PDF,yes,/placeholders/embroidery-1.webp|/placeholders/embroidery-2.webp,,yes,no,no,published,4.4,108
+IMP-016,Retro Kitchen Sampler,"Retro Kitchen Sampler is a intermediate embroidery pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Embroidery,Cross stitch,Ruth Okafor,4.95,6.95,USD,no,intermediate,English,PDF,no,/placeholders/embroidery-3.webp,,no,yes,yes,published,4.5,115
+IMP-017,Stitched Name Banner,"Stitched Name Banner is a beginner embroidery pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Embroidery,Lettering,Ruth Okafor,3.45,,USD,no,beginner,English,PDF,no,/placeholders/embroidery-4.webp,,no,no,no,published,4.6,122
+IMP-018,Sunset Loom Wall Hanging,"Sunset Loom Wall Hanging is a intermediate weaving pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Weaving,Wall hangings,Juno Achterberg,7.95,,USD,no,intermediate,English|Dutch,PDF,yes,/placeholders/crafts-4.webp|/placeholders/crafts-5.webp,,no,yes,no,published,4.7,129
+IMP-019,Tabby Weave Placemats,"Tabby Weave Placemats is a beginner weaving pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Weaving,Placemats,Juno Achterberg,0.00,,USD,yes,beginner,English,PDF,no,/placeholders/crafts-6.webp,,no,yes,no,published,4.8,136
+IMP-020,Granny Square Market Tote,"Granny Square Market Tote is a beginner crochet pattern with clear written instructions and process photos.
+
+Includes a materials list, sizing notes and finishing tips.",Crochet,Bags,Ivy Castellano,5.45,,USD,no,beginner,English|Spanish,PDF,yes,/placeholders/crochet-5.webp|/placeholders/crochet-6.webp,,yes,no,no,published,4.9,143

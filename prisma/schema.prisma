@@ -1,0 +1,192 @@
+// PatternNest data model.
+// Local development uses SQLite. To move to Postgres (Supabase / Neon) change
+// `provider` to "postgresql" and point DATABASE_URL at your database.
+// Arrays (images, languages, ...) are stored as JSON strings so the schema works
+// unchanged on both databases; see src/lib/json.ts for the helpers.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  sku             String   @unique
+  title           String
+  description     String   @default("")
+  price           Float    @default(0)
+  oldPrice        Float?
+  currency        String   @default("USD")
+  discountPercent Int      @default(0)
+  /// JSON: [{ url, thumb, medium, large, blur, alt }]
+  images          String   @default("[]")
+  categoryId      String
+  category        Category @relation(fields: [categoryId], references: [id])
+  subcategory     String?
+  designerId      String
+  designer        Designer @relation(fields: [designerId], references: [id])
+  /// beginner | intermediate | advanced
+  difficulty      String   @default("beginner")
+  /// JSON: ["English", "German"]
+  languages       String   @default("[\"English\"]")
+  fileFormat      String   @default("PDF")
+  hasVideo        Boolean  @default(false)
+  isFree          Boolean  @default(false)
+  isBestseller    Boolean  @default(false)
+  isNew           Boolean  @default(false)
+  isSponsored     Boolean  @default(false)
+  isFeatured      Boolean  @default(false)
+  rating          Float    @default(0)
+  reviewCount     Int      @default(0)
+  getPatternUrl   String?
+  metaTitle       String?
+  metaDescription String?
+  /// draft | published
+  status          String   @default("draft")
+  importJobId     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  reviews         Review[]
+
+  @@index([slug])
+  @@index([categoryId])
+  @@index([price])
+  @@index([isFree])
+  @@index([status])
+  @@index([createdAt])
+  @@index([designerId])
+  @@index([status, isBestseller])
+  @@index([status, isNew])
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  description   String    @default("")
+  image         String?
+  /// JSON: ["Amigurumi", "Blankets"]
+  subcategories String    @default("[]")
+  sortOrder     Int       @default(0)
+  createdAt     DateTime  @default(now())
+  products      Product[]
+
+  @@index([slug])
+}
+
+model Designer {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  bio       String    @default("")
+  avatar    String?
+  createdAt DateTime  @default(now())
+  products  Product[]
+
+  @@index([slug])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name      String
+  rating    Int
+  text      String
+  /// pending | approved
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+
+  @@index([productId, status])
+  @@index([status])
+}
+
+model Article {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  excerpt   String   @default("")
+  cover     String?
+  content   String   @default("")
+  /// draft | published
+  status    String   @default("draft")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([status, createdAt])
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String   @default("")
+  body      String
+  productId String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([isRead, createdAt])
+}
+
+model Setting {
+  key       String   @id
+  /// JSON value
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model ImportJob {
+  id             String    @id @default(cuid())
+  fileName       String
+  /// uploaded | validated | running | completed | failed | rolled_back
+  status         String    @default("uploaded")
+  totalRows      Int       @default(0)
+  processedRows  Int       @default(0)
+  created        Int       @default(0)
+  updated        Int       @default(0)
+  skipped        Int       @default(0)
+  failed         Int       @default(0)
+  /// JSON: detected column headers
+  headers        String    @default("[]")
+  /// JSON: { field: column }
+  mapping        String    @default("{}")
+  /// JSON: { duplicateMode, asDraft }
+  options        String    @default("{}")
+  /// JSON: [{ row, sku, field, message }]
+  errors         String    @default("[]")
+  /// JSON: [{ row, sku, url, error }]
+  imageFailures  String    @default("[]")
+  /// JSON: product ids created by this import (for rollback)
+  createdIds     String    @default("[]")
+  /// JSON: [{ id, data }] snapshots of products before they were updated
+  snapshots      String    @default("[]")
+  /// JSON: ids of categories/designers auto-created by this import
+  createdRefs    String    @default("{\"categories\":[],\"designers\":[]}")
+  hasImageZip    Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+  finishedAt     DateTime?
+
+  @@index([createdAt])
+}
